@@ -1,10 +1,10 @@
 export default class TrendDbUtils {
   constructor(trendsCollection) {
-    this.trendsCollection = trendsCollection;
+    this.TrendsCollection = trendsCollection;
   }
 
   async createOrUpdateTrend({ query, update, options }) {
-    return this.trendsCollection.bulkWrite([
+    return this.TrendsCollection.bulkWrite([
       {
         updateMany: {
           filter: query,
@@ -16,11 +16,11 @@ export default class TrendDbUtils {
   }
 
   async getTotalTrendRants(query) {
-    return this.trendsCollection.findOne(query);
+    return this.TrendsCollection.findOne(query);
   }
 
   async getTrendsAggregation(pipeline) {
-    return this.trendsCollection.aggregate(
+    return this.TrendsCollection.aggregate(
       [
         pipeline.matchTrendName,
         pipeline.unwindTrends,

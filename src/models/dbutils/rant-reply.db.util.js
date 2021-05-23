@@ -40,14 +40,6 @@ export default class RantRepliesDbUtils {
     return this.RantCommentCollection.updateOne({ rantCommentId }, { $set: { deleted: true } });
   }
 
-  async aggregate(pipeline) {
-    return this.RantCommentCollection.aggregate(
-      [
-        pipeline.first,
-      ],
-    );
-  }
-
   async editUserReply({ replyRantId, replyRant }) {
     return this.RantCommentCollection.findOneAndUpdate(
       { rantCommentId: replyRantId },

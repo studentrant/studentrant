@@ -17,6 +17,8 @@ export class Collection {
   static aggregate(value) { return Promise.resolve(value); }
 
   static countDocuments(value) { return Promise.resolve(value); }
+
+  static bulkWrite(value) { return Promise.resolve(value); }
 }
 
 export class UserDbUtils {
@@ -35,6 +37,28 @@ export class RantDbUtils {
   constructor() {}
 
   saveRant() {}
+
+  findOneRant() {}
+
+  checkUserName() {}
+
+  deleteOneRant() {}
+
+  editOneRant() {}
+
+  upvote() {}
+
+  findOneVoter() {}
+
+  removeOneVote() {}
+
+  downvote() {}
+
+  findAllRants() {}
+
+  getTotalRants() {}
+
+  findRantTags() {}
 }
 
 export class TrendDbUtils {
